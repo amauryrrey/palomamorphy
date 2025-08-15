@@ -143,9 +143,6 @@ function playNextSong() {
   const audio = document.getElementById("audio");
   const audioPlayer = document.getElementById("audio-player");
   const progressBar = document.getElementById("progress-bar");
-
-   console.log(currentSongIndex);
-
   const currentSongFile = songFiles[currentSongIndex];
   audio.src = `canciones/${currentSongFile}`;
   audio.load(); // Cargar el archivo de audio
