@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paloma Morphy Heardle</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Logo centrado con enlace -->
+   <a href="index.html">
+      <img src="logo.png" alt="Paloma Morphy Heardle" class="logo">
+   </a>
+    <div id="audio-player" class="hidden">
+      <audio id="audio" controls></audio>
+    </div>
+
+    <div class="progress-bar-container">
+      <div id="progress-bar" class="progress-bar"></div>
+    </div>
+
+    <div class="input-container-rapid hidden">
+      <input type="text" id="guess-input" placeholder="Type your guess here...">
+      <ul id="suggestions"></ul>
+    </div>
+ 
+<!-- Botón gráfico Start Game -->
+<button id="start-game" class="start-game-graphic">
+    <span class="sr-only">Start Game</span>
+</button>
+    <button id="submit-guess" class="hidden">Submit Guess</button>
+
+    <div class="stats">
+      <p id="score">Puntuación: 0</p>
+      <p id="high-score">High Score: 0</p>
+    </div>
+
+    <div id="result-container"></div>
+    <div id="result"></div>
+    <script src="script1.js"></script>
+</body>
+</html>
