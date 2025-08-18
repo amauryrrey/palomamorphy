@@ -125,6 +125,22 @@ body {
     max-width: 70%;
   }
 }
+@media (max-width: 768px) {
+  .screen {
+    left: 12%;       /* mover un poquito más a la derecha */
+    top: 14%;        /* subir un poco */
+    width: 72%;      /* más ancho */
+    height: 68%;     /* más alto */
+    gap: 16px;       /* más espacio entre logo y botones */
+  }
+  .logo {
+    max-width: 80%;  /* logo más chico */
+  }
+  .button img {
+    max-width: 75%;  /* botón más chico */
+  }
+}
+
 
 @media (max-width: 420px) {
   .logo { max-width: 90%; }
