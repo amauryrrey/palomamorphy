@@ -1,113 +1,133 @@
-  body {
-    font-family: 'Pacifico', cursive;
-    color: white;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+body {
+  font-family: 'Pacifico', cursive;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
 
-    /* Varias imágenes de fondo */
-    background: 
-        url('paloma.jpg') repeat;
-    background-size: 200px 200px, 300px 300px, 250px 250px; 
-    background-position: 0 0, 50px 50px, 100px 100px;
-    animation: moverFondo 10s linear infinite;
-  }
+  /* Varias imágenes de fondo */
+  background: url('paloma.jpg') repeat;
+  background-size: 200px 200px, 300px 300px, 250px 250px;
+  background-position: 0 0, 50px 50px, 100px 100px;
+  animation: moverFondo 10s linear infinite;
+}
 
-  @keyframes moverFondo {
-    0% { background-position: 0 0, 50px 50px, 100px 100px; }
-    100% { background-position: 200px 200px, 250px 250px, 300px 300px; }
-  }
+@keyframes moverFondo {
+  0% { background-position: 0 0, 50px 50px, 100px 100px; }
+  100% { background-position: 200px 200px, 250px 250px, 300px 300px; }
+}
 
+.tv-container {
+  position: relative;
+  aspect-ratio: 20 / 10;
+  width: 900px;
+  max-width: 180vw;
+}
+
+.tv-image { 
+  width: 100%; 
+  display: block; 
+}
+
+.screen {
+  position: absolute;
+  left: 9.49%;
+  top: 16.28%;
+  width: 56.36%;
+  height: 60.72%;
+  padding: 2%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.logo {
+  max-width: 70%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 0 10px white);
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { filter: drop-shadow(0 0 10px white); }
+  to { filter: drop-shadow(0 0 20px white); }
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  /* PC → pegado a la izquierda */
+  gap: 8px;
+  margin-left: 235px;       /* PC → corrido a la derecha */
+}
+
+.button {
+  display: block;
+  text-decoration: none;
+}
+
+.button img {
+  display: block;
+  max-width: 50%;
+  height: auto;
+  transition: transform .15s ease, filter .15s ease;
+  filter: drop-shadow(0 0 5px white);
+}
+
+.button img:hover { 
+  transform: scale(1.05); 
+  filter: drop-shadow(0 0 15px white);
+}
+
+/* Hover personalizado para cada botón */
+.rapid img {
+  content: url("botonrapid.png");
+}
+.rapid img:hover {
+  content: url("botonrapidcursor.png");
+}
+
+.daily img {
+  content: url("botondaily.png");
+}
+.daily img:hover {
+  content: url("botondailycursor.png");
+}
+
+/* 📱 Ajustes responsive */
+@media (max-width: 768px) {
   .tv-container {
-    position: relative;
-    aspect-ratio: 20 / 10;
-    width: 900px;
-    max-width: 180vw;
-  }
-
-  /* Tele sin brillo */
-  .tv-image { 
-    width: 100%; 
-    display: block; 
-  }
-
-  .screen {
-    position: absolute;
-    left: 9.49%;
-    top: 16.28%;
-    width: 56.36%;
-    height: 60.72%;
-    padding: 2%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    overflow: hidden;
-  }
-
-  .logo {
-    max-width: 70%;
-    height: auto;
-    display: block;
-    filter: drop-shadow(0 0 10px white);
-    animation: glow 1.5s ease-in-out infinite alternate;
-  }
-
-  @keyframes glow {
-    from { filter: drop-shadow(0 0 10px white); }
-    to { filter: drop-shadow(0 0 20px white); }
-  }
-
-  .buttons {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    margin-left: 235px;
+    max-width: 95vw;
   }
-
-  .button {
-    display: block;
-    text-decoration: none;
+  .screen {
+    gap: 10px;
+    padding: 4%;
   }
-
+  .logo {
+    max-width: 85%;
+  }
+  .buttons {
+    margin-left: 0;          /* quitar desplazamiento fijo */
+    align-items: center;     /* centrar botones */
+    gap: 12px;
+  }
   .button img {
-    display: block;
-    max-width: 50%;
-    height: auto;
-    transition: transform .15s ease, filter .15s ease;
-    filter: drop-shadow(0 0 5px white);
+    max-width: 70%;
   }
+}
 
-  .button img:hover { 
-    transform: scale(1.05); 
-    filter: drop-shadow(0 0 15px white);
-  }
-
-  /* Hover personalizado para cada botón */
-  .rapid img {
-    content: url("botonrapid.png");
-  }
-  .rapid img:hover {
-    content: url("botonrapidcursor.png");
-  }
-
-  .daily img {
-    content: url("botondaily.png");
-  }
-  .daily img:hover {
-    content: url("botondailycursor.png");
-  }
-
-  @media (max-width:420px) {
-    .screen { padding: 6px; gap: 8px; }
-    .logo { max-width: 80%; }
-    .button img { max-width: 60%; }
-    .buttons { margin-left: 0; align-items: center; }
-  }
+@media (max-width: 420px) {
+  .logo { max-width: 90%; }
+  .button img { max-width: 80%; }
+  .screen { padding: 6px; gap: 6px; }
+}
