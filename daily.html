@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Meta descripción -->
+  <meta name="description" content="Juega al heardle de Paloma Morphy, adivina una canción de Paloma Morphy por día, inicias con un clip de 1 segundo y desbloqueas 1 segundo más por cada intento.">
+
+  <!-- Meta palabras clave -->
+  <meta name="keywords" content="Paloma Morphy, Heardle, juego musical, artista nueva, paloma morphy heardle, daily heardle">
+  <!-- Open Graph (para redes sociales como Facebook y X) -->
+  <meta property="og:title" content="Paloma Morphy Headrle">
+  <meta property="og:description" content="Juega al Heardle de Paloma Morphy, heardle diario y rapido disponibles.">
+  <meta property="og:url" content="https://palomamorphyheardle.netlify.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://palomamorphyheardle.netlify.app/preview.png"> <!-- Cambia esta URL si aún no tienes la imagen -->
+
+  <!-- Twitter Card (opcional pero recomendado) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Paloma Morphy's Heardle">
+  <meta name="twitter:description" content="Juega al heardle de Paloma Morphy, cuantas canciones puedes adivinar?">
+  <meta name="twitter:image" content="https://palomamorphy.netlify.app/preview.png">
+  <title>Paloma Morphy's Daily Heardle</title>
+  <link rel="icon" type="image/png" href="favicon.ico">
+  <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+ <div class="game-container">
+  <!-- Título centrado en la parte superior -->
+   <a href="index.html">
+      <img src="logo.png" alt="Paloma Morphy Heardle" class="logo">
+   </a>
+  <div id="audio-player" class="hidden">
+    <audio id="audio" controls></audio>
+  </div>
+  <div class="progress-bar-container">
+    <div id="progress-bar" class="progress-bar"></div>
+  </div>
+  <div class="input-grid">
+    <div class="input-container" id="input-container-1">
+      <input type="text" id="guess-input-1" placeholder="Escribe tu respuesta aquí...">
+      <ul id="suggestions-1"></ul>
+    </div>
+    <div class="input-container" id="input-container-2">
+      <input type="text" id="guess-input-2" placeholder="" disabled>
+      <ul id="suggestions-2"></ul>
+    </div>
+    <div class="input-container" id="input-container-3">
+      <input type="text" id="guess-input-3" placeholder="" disabled>
+      <ul id="suggestions-3"></ul>
+    </div>
+    <div class="input-container" id="input-container-4">
+      <input type="text" id="guess-input-4" placeholder="" disabled>
+      <ul id="suggestions-4"></ul>
+    </div>
+    <div class="input-container" id="input-container-5">
+      <input type="text" id="guess-input-5" placeholder="" disabled>
+      <ul id="suggestions-5"></ul>
+    </div>
+  </div>
+<button id="play-audio" class="play-audio-graphic">
+    <span class="sr-only">Play Audio</span>
+</button>
+  <!-- Botón Stats en la esquina inferior derecha -->
+  <button class="hidden" onclick="showStatistics()" style="position: absolute; bottom: 20px; right: 20px;">
+    <img src="botonplayagain.png" alt="Stats">
+  </button>
+
+  <div id="result-container"></div>
+  <div id="result"></div>
+</div>
+  <!-- Ventana Modal -->
+  <div id="statisticsModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+<a href="index.html">
+      <img src="logo.png" alt="Paloma Morphy Heardle" class="logo1">
+   </a>        <span class="close-btn">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="stat">
+          <span class="stat-value" id="played">0</span>
+          <span class="stat-label">Played</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="winPercentage">0%</span>
+          <span class="stat-label">Win %</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="streak">0</span>
+          <span class="stat-label">Current Streak</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="highstreak">0</span>
+          <span class="stat-label">Max Streak</span>
+        </div>
+        <!-- Contenedor para las barras de intentos -->
+        <div id="attempts-container" class="attempts-container"></div>
+      </div>
+      <div style="margin-top: 20px; text-align: center; color: #ffffff; font-size: 16px;">
+        Sígue a Paloma Morphy en sus 
+        <a href="https://linktr.ee/palomamorphy" target="_blank" style="color: #1DA1F2; text-decoration: none; font-weight: bold;">
+          redes
+        </a>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
